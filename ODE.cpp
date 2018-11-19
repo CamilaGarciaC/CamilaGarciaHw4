@@ -113,7 +113,7 @@ int main (){
 		grados45 << t <<" "<<x<<" "<<y<<" "<<vx<<" "<<vy<<endl;
 		if (y<=0.0 && t>0.0){
 //Se imprime el valor preguntado
-			cout << x <<" metros"<<endl;
+			cout << "Para el angulo de 45 grados se tiene una distancia maxima de"<< x <<" metros"<<endl;
 			break;
 		}
 	}
@@ -141,8 +141,8 @@ int main (){
 	}
 //Se utiliza el metodo anteriormente creado para dar la respuesta
 	int z = mayor(angulos,7);
-//Se imprime respyesta
-	cout << "la mayor distancia es para el angulo "<< thetas[z]<< "con un valor de 5.1933" endl;
+//Se imprime el valor preguntado
+	cout << "la mayor distancia es para el angulo "<< thetas[z]<< "con un valor de 5.1933 metros"<< endl;
 	return 0;
 
 }
