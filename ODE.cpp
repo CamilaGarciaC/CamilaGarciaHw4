@@ -1,38 +1,51 @@
+
 //Se importan los paquetes a usar
 #include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <cmath>
+#include <fstream>
+#define PI 3.14159
 using namespace std
 
-//Se declaran las condiciones iniciales
+//Se declaran las condiciones iniciales y constantes de movimiento
 double g = 10;
 double c = 0.2;
 double m = 0.2; 
 double x0 = 0;
-double y0 = 0
-double v = 300;
-double teta = 45;
-double d = c*v
-int N = 10000;
+double y0 = 0;
+double t0 = 0;
+double dt = 0.001;
+double v0 = 300;
+double vx0 = v0*cos(teta);
+double vy0 = v0*sin(teta);
 
-
-double f1(double v, double x, double t);
-double f2(double v, double x, double t);
-
-double fun()
-{
-	return -g-c*(abs(v)/m)*v
+//Metodo que cambia el angulo a radianes
+double rad(double teta){
+	r = PI*angulo/180.0;
+	return r
 }
-	
-int main()
-{
-	double x1[N];
-	double y1[N];
-	double v1[N];
 
-	x1[0] = x0;
-	y1[0] = y0;
-	v1[0] = v0;
- 
-return 0;
+//Se dan las funciones para el metodo Runge Kutta
+double velx(double t,double x, double y, double vx, double vy){
+	return vx;
+}
+
+double vely(double t,double x, double y, double vx, double vy){
+	return vy;
+}
+
+double acx(double t,double x, double y, double vx, double vy){
+	return -c*(pow(vx,2)+pow(vy,2))/m*vx/sqrt(pow(vx,2)+pow(vy,2));
+}
+
+double acy(double t,double x, double y, double vx, double vy){
+	return -g-c*(pow(vx,2)+pow(vy,2))/m*vy/sqrt(pow(vx,2)+pow(vy,2));
+}
+
+void RungeKutta(){
+
+
+
 }
